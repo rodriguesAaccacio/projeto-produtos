@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch('http://localhost:3000/products');
             const products = await response.json();
 
+            if (products.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">📦</div>
+                        <h3>Nenhum produto encontrado</h3>
+                        <p>Parece que você ainda não cadastrou nada. Clique no botão superior direito para começar!</p>
+                    </div>
+                `;
+                return;
+            }
+
             grid.innerHTML = products.map(p => `
                 <div class="card-item">
                     <div class="card-info">
@@ -26,7 +37,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             `).join('');
 
         } catch (err) {
-            grid.innerHTML = '<p>Erro ao carregar catálogo.</p>';
+            grid.innerHTML = `
+                <div class="empty-state error">
+                    <p>Erro ao conectar com o servidor. Verifique se a API está rodando.</p>
+                </div>
+            `;
         }
     };
 
