@@ -2,7 +2,6 @@
 
 O **StockHub** é uma solução de gerenciamento de inventário leve e intuitiva. Desenvolvido para facilitar o cadastro, edição e exclusão de itens, o projeto conta com uma interface moderna, responsiva e focada na experiência do usuário (UX), conectada a um banco de dados relacional.
 
-![Status do Projeto](https://img.shields.io/badge/Status-Conclu%C3%ADdo-success?style=for-the-badge)
 ![Tecnologias](https://img.shields.io/badge/Stack-HTML5%20|%20CSS3%20|%20JS%20|%20Node.js%20|%20MySQL-blue?style=for-the-badge)
 
 ## 🚀 Funcionalidades

@@ -33,6 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
             description: document.getElementById('descricao').value.trim()
         };
 
+        if (editData) {
+            const isUnchanged = 
+                data.name === editData.name &&
+                data.price === parseFloat(editData.price) && 
+                data.category === editData.category &&
+                data.description === editData.description;
+
+            if (isUnchanged) {
+                alert('Esse produto ainda não foi editado.');
+                return;
+            }
+        }
+
         try {
             let url = 'http://localhost:3000/products';
             let method = 'POST';

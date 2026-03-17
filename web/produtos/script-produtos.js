@@ -56,9 +56,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const response = await fetch(`http://localhost:3000/products/${id}`, {
                     method: 'DELETE'
                 });
-                if (response.ok) loadProducts();
+                
+                if (response.ok) {
+                    await loadProducts(); 
+                    
+                    setTimeout(() => {
+                        alert('Produto excluído com sucesso!');
+                    }, 100);
+                }
+                
             } catch (err) {
                 console.error('Erro na requisição:', err);
+                alert('Erro ao excluir o produto.');
             }
         }
     };
